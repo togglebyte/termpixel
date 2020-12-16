@@ -1,0 +1,9 @@
+[package]
+name = "termpixel"
+version = "0.1.0"
+authors = ["Togglebit <me@togglebit.io>"]
+edition = "2018"
+
+[dependencies]
+tinybit = { path = "../tinybit" }
+image = "0.23.12"
