@@ -25,6 +25,9 @@ fn load_image(path: &str) -> Result<Vec<Block>, ImageError> {
     let img = ImageReader::open(path)?.decode()?;
     let mut blocks = Vec::new();
     for (x, y, pixel) in img.pixels() {
+        if pixel[3] == 0 {
+            continue
+        }
         let color = Color::Rgb {
             r: pixel[0],
             g: pixel[1],
