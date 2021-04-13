@@ -1,7 +1,7 @@
 use image::io::Reader as ImageReader;
 use image::GenericImageView;
 use image::ImageError;
-use tinybit::events::{events, Event, KeyCode, KeyEvent};
+use tinybit::events::{events, Event, KeyCode, KeyEvent, EventModel};
 use tinybit::{term_size, Pixel, Renderer, ScreenPos, ScreenSize, StdoutTarget, Viewport, Color};
 
 struct Block {
@@ -57,7 +57,7 @@ fn main() {
 
     let blocks = load_image(&filepath).unwrap();
 
-    for event in events(1) {
+    for event in events(EventModel::Fps(1)) {
         match event {
             Event::Tick => {
                 blocks.iter().for_each(|block| {

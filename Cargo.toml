@@ -5,5 +5,5 @@ authors = ["Togglebit <me@togglebit.io>"]
 edition = "2018"
 
 [dependencies]
-tinybit = { path = "../tinybit" }
+tinybit = "0.1.1"
 image = "0.23.12"
